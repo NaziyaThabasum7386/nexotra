@@ -13,28 +13,28 @@ const WhyChooseUs = () => {
       title: "Innovation Leaders",
       description:
         "Pioneering cutting-edge solutions that set industry standards",
-      stats: "150+ Innovations",
+      
       color: "from-purple-500 to-indigo-500",
     },
     {
       icon: Target,
       title: "Result-Driven Approach",
       description: "Focused on delivering measurable business outcomes",
-      stats: "98% Success Rate",
+      
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Users,
       title: "Expert Team",
       description: "Seasoned professionals with diverse industry expertise",
-      stats: "50+ Experts",
+     
       color: "from-emerald-500 to-teal-500",
     },
     {
       icon: Code,
       title: "Technical Excellence",
       description: "Mastery in latest technologies and best practices",
-      stats: "500+ Projects",
+      
       color: "from-orange-500 to-amber-500",
     },
     {
@@ -42,13 +42,13 @@ const WhyChooseUs = () => {
       title: "Client Partnership",
       description:
         "Building lasting relationships through trust and collaboration",
-      stats: "200+ Partners",
+      
       color: "from-pink-500 to-rose-500",
     },
   ];
 
   return (
-    <div className="relative min-h-screen py-20 bg-white">
+    <div className="relative min-h-screen bg-white">
       <div ref={containerRef} className="container mx-auto px-4">
         {/* Title Section */}
         <motion.div
@@ -87,7 +87,7 @@ const WhyChooseUs = () => {
           </motion.div>
 
           {/* Reasons List (Animated One-by-One + Instant Hover) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 my-10 space-y-6">
             {reasons.map((reason, index) => (
               <motion.div
                 key={index}
@@ -114,11 +114,6 @@ const WhyChooseUs = () => {
                       {reason.title}
                     </h3>
                     <p className="text-white/80">{reason.description}</p>
-                  </div>
-                  <div className="hidden md:block text-right">
-                    <span className="text-sm font-medium text-white/80">
-                      {reason.stats}
-                    </span>
                   </div>
                 </div>
               </motion.div>

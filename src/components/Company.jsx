@@ -1,15 +1,10 @@
 import React from "react";
 import Designer from "../assets/Company/Designer.jpeg";
 import { motion } from "framer-motion";
-//import Img from "../assets/Company/leftSlide.png";
 import { Target, Eye } from "lucide-react";
 import Img from "../assets/Company/AboutOurCom(federalSYstems).png";
 
 const Company = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-  };
   return (
     <>
       <div className="relative w-full h-[550px]">
@@ -29,18 +24,16 @@ const Company = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Revolutionizing Global Digital Excellence
+            Driving Innovation with Integrity
           </motion.p>
           <motion.p
-            className="m-4 text-xl md:text-2xl  font-semibold max-w-2xl"
+            className="m-4 text-xl md:text-2xl font-semibold max-w-2xl text-white"
             initial={{ opacity: 0, x: 1000 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Federal Soft Systems Inc. is a leading Global IT Products and
-            Services company that specializes in Digital Transformation for
-            diverse business verticals.
+            Nexota Technologies Private Limited specializes in application development, IT services, business advisory, and recruitment solutions — dedicated to empowering your growth.
           </motion.p>
         </div>
       </div>
@@ -72,17 +65,17 @@ const Company = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                More About Our Company
+                Who We Are
               </motion.h2>
 
               <motion.p
-                className="text-xl md:text-2xl font-semibold text-red-500"
+                className="text-xl md:text-2xl font-semibold text-indigo-700"
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                Increasing Value Through People
+                Passionate about delivering value and building meaningful partnerships.
               </motion.p>
 
               <motion.p
@@ -92,18 +85,12 @@ const Company = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                With an unwavering commitment to excellence, Federal Soft
-                Systems takes a proactive role in crafting tailor-made
-                technological solutions, driving a comprehensive and
-                transformative evolution in the landscape of business
-                digitization. Through advanced digital platforms, our company
-                paves the way for businesses and brands to thrive in the dynamic
-                and ever-evolving digital era.
+                At Nexota Technologies, we are committed to helping businesses navigate the digital landscape with practical solutions and reliable support. Though a startup, our focus is on building trust through dedication and consistently meeting client needs in application design, IT assistance, business consulting, and talent sourcing.
               </motion.p>
             </div>
 
             {/* Mission and Vision Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               {/* Mission */}
               <motion.div
                 className="flex items-center gap-6 p-6 bg-gray-50 rounded-xl shadow-sm"
@@ -113,13 +100,12 @@ const Company = () => {
                 viewport={{ once: true }}
               >
                 <div className="flex-shrink-0">
-                  <Target className="w-12 h-12 text-red-500" />
+                  <Target className="w-12 h-12 text-indigo-700" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2">Our Mission</h3>
                   <p className="text-gray-600">
-                    Our mission is to be the leading provider of digital
-                    solutions that drive business evolution.
+                    To foster growth and success for our clients by providing dependable technology and business services with honesty and transparency.
                   </p>
                 </div>
               </motion.div>
@@ -133,13 +119,12 @@ const Company = () => {
                 viewport={{ once: true }}
               >
                 <div className="flex-shrink-0">
-                  <Eye className="w-12 h-12 text-red-500" />
+                  <Eye className="w-12 h-12 text-indigo-700" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2">Our Vision</h3>
                   <p className="text-gray-600">
-                    Our vision is to pioneer technological innovation that
-                    empowers businesses to reach their full potential.
+                    To establish Nexota Technologies as a trusted partner that supports sustainable growth and innovation for businesses worldwide.
                   </p>
                 </div>
               </motion.div>

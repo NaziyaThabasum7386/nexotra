@@ -9,6 +9,7 @@ import {
   ArrowDown,
   MousePointer2,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 
 export default function Home() {
   const containerVariants = {
@@ -83,7 +84,6 @@ export default function Home() {
       id="home"
       className="min-h-screen flex flex-col justify-center items-center bg-white text-gray-900 relative overflow-hidden px-4 sm:px-6 lg:px-8"
     >
-      {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -118,7 +118,7 @@ export default function Home() {
           className="mb-8 flex justify-center"
         >
           <div className="relative">
-            <Network size={64} className="bg-custom-gradient text-transparent bg-clip-text" />
+            <Network size={150} className="bg-custom-gradient text-transparent bg-clip-text" />
             <motion.div
               animate={{
                 rotate: 360,
@@ -128,19 +128,11 @@ export default function Home() {
                 rotate: { duration: 20, repeat: Infinity, ease: "linear" },
                 scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
               }}
-              className="absolute inset-0 border-2 border-blue-500/30 rounded-full"
+              className="absolute inset-0 border-4 border-blue-500/30 rounded-full"
             />
-            <motion.div
-              animate={{
-                rotate: -360,
-                scale: [1.2, 1, 1.2],
-              }}
-              transition={{
-                rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-                scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-              }}
-              className="absolute inset-0 border-2 border-purple-500/30 rounded-full"
-            />
+            <div className="absolute inset-0 border-4 border-purple-500/30 rounded-full flex items-center justify-center">
+              <img src={logo} alt="Nexotra Logo" className="w-16 h-16 object-container" />
+            </div>
           </div>
         </motion.div>
 
@@ -149,7 +141,7 @@ export default function Home() {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center"
         >
           <span className="bg-custom-gradient text-transparent bg-clip-text">
-            Pioneering Next-Gen AI Technologies
+            NEXOTRA
           </span>
         </motion.h1>
 
@@ -158,13 +150,10 @@ export default function Home() {
             variants={itemVariants}
             className="text-base sm:text-lg md:text-xl lg:text-2xl bg-custom-gradient text-transparent bg-clip-text text-center max-w-3xl"
           >
-            We drive digital excellence by leveraging cutting-edge innovations
-            and accelerating revolutionary digital futures for future-ready
-            organizations.
+           At Nexota Technologies, we are driven by passion and precision to deliver innovative IT solutions tailored to your business needs.
           </motion.p>
         </div>
 
-        {/* Scroll Indicator */}
         <motion.div
           variants={scrollIndicatorVariants}
           initial="initial"
@@ -212,7 +201,6 @@ export default function Home() {
         </motion.div>
       </motion.div>
 
-      {/* Gradient overlay */}
       <motion.div
         className="absolute inset-0 z-0"
         initial={{ opacity: 0 }}

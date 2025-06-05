@@ -41,7 +41,7 @@ const OurStory = () => {
         whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         transition={{ duration: 0.3 }}
       >
-        <div className="text-center text-white max-w-2xl">
+        <div className="text-center text-white max-w-[62rem]">
           {/* Title Animation */}
           <motion.h1
             className="text-5xl md:text-6xl font-bold m-4 p-9 text-white"
@@ -93,9 +93,8 @@ const OurStory = () => {
             viewport={{ once: true }}
             custom={2}
           >
-            Rooted in a vision for positive influence, our journey reflects
-            passion and innovation. Overcoming early challenges, we've evolved
-            to empower enterprises globally.
+            Driven by purpose and crafted with care, Nexota Technologies was founded to create impactful digital experiences.
+            Focused on delivering value, trust, and technology that empowers businesses to grow.
           </motion.p>
 
           {/* Decorative Line */}

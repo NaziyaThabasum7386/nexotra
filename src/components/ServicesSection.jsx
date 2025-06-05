@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import ServiceCard from "../components/ServiceCardbn";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { motion } from "framer-motion";
+import ServiceCard from "../components/ServiceCardbn";
+import Devops from '../components/devops'
 
 const services = [
   {
@@ -20,8 +22,8 @@ const services = [
   },
   {
     id: 3,
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and deployment",
+    title: "Business Consulting",
+    description: "Navigate complexity, drive transformation, and unlock sustainable growth with our expert business consulting services.",
     backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
     knowmoreLink: "/services/cloud-integration",
   },
@@ -34,7 +36,7 @@ const services = [
   },
   {
     id: 5,
-    title: "Cybersecurity",
+    title: "Talent Hiring",
     description: "Comprehensive security solutions and consulting",
     backgroundImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
     knowmoreLink: "/services/cybersecurity",
@@ -44,78 +46,98 @@ const services = [
     title: "DevOps Services",
     description: "Streamline your development and operations",
     backgroundImage: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9",
-    knowmoreLink: "/services/full-stack",
+    knowmoreLink: <Devops/>,
   },
 ];
 
-const ServicesSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const intervalRef = useRef(null);
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 640 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 640, min: 0 },
+    items: 1,
+  },
+};
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % services.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
-  };
-
-  const visibleServices = [
-    services[currentIndex % services.length],
-    services[(currentIndex + 1) % services.length],
-    services[(currentIndex + 2) % services.length],
-  ];
-
-  useEffect(() => {
-    if (!isHovered) {
-      intervalRef.current = setInterval(() => {
-        nextSlide();
-      }, 3000);
-    }
-    return () => clearInterval(intervalRef.current);
-  }, [currentIndex, isHovered]);
-
-  const handleDragEnd = (event, info) => {
-    if (info.offset.x < -100) {
-      nextSlide();
-    } else if (info.offset.x > 100) {
-      prevSlide();
-    }
-  };
-
-  return (
-    <div
-      className="bg-white min-h-screen py-16"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+const CustomLeftArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full shadow p-2 z-50"
+    aria-label="Previous Slide"
+  >
+    <svg
+      className="w-8 h-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
     >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+);
+
+const CustomRightArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full shadow p-2 z-50"
+    aria-label="Next Slide"
+  >
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+);
+
+const ServicesSection = () => {
+  return (
+    <div className="bg-white min-h-screen py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-4xl font-bold text-black mb-4">Our Services</p>
           <h2 className="text-4xl font-bold text-black">
-            Achieve
+            Achieve{" "}
             <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
-              {" "}Business Excellence
+              Business Excellence
             </span>{" "}
             With Our Services
           </h2>
         </div>
 
-        <div className="relative px-4 lg:px-12">
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 overflow-hidden cursor-grab"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={handleDragEnd}
+        <div className="relative">
+          <Carousel
+            responsive={responsive}
+            infinite
+            swipeable
+            draggable
+            showDots={false}
+            arrows
+            customLeftArrow={<CustomLeftArrow />}
+            customRightArrow={<CustomRightArrow />}
+            itemClass="px-2"
+            containerClass="py-4"
           >
-            {visibleServices.map((service, index) => (
+            {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                className="flex-1 min-w-[300px]"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
                 <ServiceCard
                   title={service.title}
@@ -125,55 +147,7 @@ const ServicesSection = () => {
                 />
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full shadow-lg hidden md:block"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(246,0,254,1) 20%, rgba(201,0,254,1) 31%, rgba(161,54,255,1) 43%, rgba(81,66,240,1) 66%, rgba(0,51,217,1) 100%)",
-              color: "#fff",
-            }}
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full shadow-lg hidden md:block"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(246,0,254,1) 20%, rgba(201,0,254,1) 31%, rgba(161,54,255,1) 43%, rgba(81,66,240,1) 66%, rgba(0,51,217,1) 100%)",
-              color: "#fff",
-            }}
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Dot Indicators */}
-        <div className="flex justify-center mt-8 gap-2">
-          {services.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              title={services[i].title}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === currentIndex
-                  ? "bg-gradient-to-r from-fuchsia-600 via-purple-600 to-blue-600"
-                  : "bg-gray-300"
-              }`}
-              style={
-                i === currentIndex
-                  ? {
-                      backgroundImage:
-                        "linear-gradient(90deg, rgba(246,0,254,1) 20%, rgba(201,0,254,1) 31%, rgba(161,54,255,1) 43%, rgba(81,66,240,1) 66%, rgba(0,51,217,1) 100%)",
-                    }
-                  : {}
-              }
-            />
-          ))}
+          </Carousel>
         </div>
       </div>
     </div>

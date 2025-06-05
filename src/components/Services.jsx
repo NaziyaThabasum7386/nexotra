@@ -29,9 +29,9 @@ export default function Services() {
     },
     {
       icon: <Cloud className="text-red-400" size={40} />,
-      title: "Cloud Solutions",
+      title: "Business Consulting",
       description:
-        "Deploying and managing applications on AWS, Azure, and Google Cloud.",
+        "Navigate complexity, drive transformation, and unlock sustainable growth with our expert business consulting services.",
     },
     {
       icon: <Code2 className="text-yellow-400" size={40} />,

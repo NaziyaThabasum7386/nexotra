@@ -1,40 +1,49 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png"; // adjust path if needed
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-custom-gradient shadow-lg w-full top-0 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-custom-gradient shadow-lg z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="text-xl font-bold text-white">
-            TechCorp
+          
+          {/* Logo + Brand Text inside white container */}
+          <Link
+            to="/"
+            className="flex items-center space-x-2 bg-white rounded-full px-3 py-1 transition-transform duration-300 hover:scale-105 shadow-md"
+          >
+            <img src={logo} alt="Nexotra Logo" className="h-8 w-8 object-contain" />
+            <span className="bg-custom-gradient text-transparent bg-clip-text font-bold text-xl">
+              NEXOTRA
+            </span>
           </Link>
 
-          {/* Desktop Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-9 items-center">
-            <Link to="/" className="text-white px-3 py-2 rounded hover:bg-white hover:text-black transition">
-              Home
-            </Link>
-            <Link to="/about" className="text-white px-3 py-2 rounded hover:bg-white hover:text-black transition">
-              About Us
-            </Link>
-            <Link to="/company" className="text-white px-3 py-2 rounded hover:bg-white hover:text-black transition">
-              Company
-            </Link>
-            <Link to="/blogs" className="text-white px-3 py-2 rounded hover:bg-white hover:text-black transition">
-              Blogs
-            </Link>
-            <Link to="/contact" className="text-white px-3 py-2 rounded hover:bg-white hover:text-black transition">
-              Contact Us
-            </Link>
+            {[
+              ["Home", "/"],
+              ["About Us", "/about"],
+              ["Company", "/company"],
+              ["Blogs", "/blogs"],
+              ["Contact Us", "/contact"],
+            ].map(([label, path]) => (
+              <Link
+                key={path}
+                to={path}
+                className="text-white dark:text-gray-100 px-3 py-2 rounded hover:bg-white hover:text-black dark:hover:bg-gray-100 dark:hover:text-black transition"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white dark:text-gray-100">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -43,42 +52,23 @@ const NavBar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden px-4 pt-2 pb-4 bg-white/90 backdrop-blur rounded-b-xl shadow-md space-y-2">
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="block text-gray-800 px-4 py-2 rounded hover:bg-black hover:text-white transition"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            onClick={() => setIsOpen(false)}
-            className="block text-gray-800 px-4 py-2 rounded hover:bg-black hover:text-white transition"
-          >
-            About Us
-          </Link>
-          <Link
-            to="/company"
-            onClick={() => setIsOpen(false)}
-            className="block text-gray-800 px-4 py-2 rounded hover:bg-black hover:text-white transition"
-          >
-            Company
-          </Link>
-          <Link
-            to="/blogs"
-            onClick={() => setIsOpen(false)}
-            className="block text-gray-800 px-4 py-2 rounded hover:bg-black hover:text-white transition"
-          >
-            Blogs
-          </Link>
-          <Link
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className="block text-gray-800 px-4 py-2 rounded hover:bg-black hover:text-white transition"
-          >
-            Contact Us
-          </Link>
+        <div className="md:hidden px-4 pt-2 pb-4 bg-white/90 dark:bg-black/80 backdrop-blur rounded-b-xl shadow-md space-y-2 transition-all">
+          {[
+            ["Home", "/"],
+            ["About Us", "/about"],
+            ["Company", "/company"],
+            ["Blogs", "/blogs"],
+            ["Contact Us", "/contact"],
+          ].map(([label, path]) => (
+            <Link
+              key={path}
+              to={path}
+              onClick={() => setIsOpen(false)}
+              className="block text-gray-800 dark:text-gray-100 px-4 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+            >
+              {label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

@@ -1,4 +1,7 @@
 import Home from "./components/Home";
+import Devops from './components/devops';
+import TechStackPage from './components/TechStackPage';
+import ProfileData from './components/ProfileCard/ProfileData';
 import Services from "./components/Services";
 import Technologies from "./components/Technologies";
 import Contact from "./components/Contact";
@@ -38,10 +41,9 @@ function App() {
               {/* <About /> */}
               <ServicesSection />
               <WhyChooseUs />
+               <TechStackPage />
               <TheTeam />
-              <Teamscards />
               {/* <Services /> */}
-              <TechGridSection />
               <Footer />
             </div>
           }
@@ -60,6 +62,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/digital-transformation" element={<Dt />} />
         <Route path="/services/full-stack" element={<FullstackService />} />
+             <Route path="/services/devops" element={<Devops />} />
         <Route path="/services/cybersecurity"element={<CyberSecurityService />} />
         <Route path="/services/cloud-integration" element={<CloudService />} />
         <Route

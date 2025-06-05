@@ -1,50 +1,48 @@
 import React from "react";
-import { ArrowRight } from 'lucide-react';
-import { Users, Rocket, Target, Award, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="flex justify-between p-4 bg-gray-100 rounded-xl shadow-md">
+    <div className="flex flex-col lg:flex-row justify-between p-4 bg-gray-100 rounded-xl shadow-md gap-4">
       {/* Left Div */}
-      <div className="w-1/2 p-4 bg-white rounded-lg shadow-sm">
+      <div className="w-full lg:w-1/2 p-4 bg-white rounded-lg shadow-sm text-center lg:text-left">
         <h2 className="text-xl font-bold mb-2 text-gray-700">
-          Welcome to Federal Soft Systems
+          Welcome to Nexota Technologies
         </h2>
-        <p className="text-blue-900 font-black text-4xl">
-          <div className="mb-2 bg-custom-gradient text-transparent bg-clip-text">Revolutionizing Global Digital Excellence</div>
-        
-        </p>
+        <h1 className="text-blue-900 font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+          <span className="bg-custom-gradient text-transparent bg-clip-text block">
+            Empowering Digital Innovation & Growth
+          </span>
+        </h1>
       </div>
-      {/* right Div */}
-      <div className="w-1/2 p-4 bg-white rounded-lg shadow-sm ml-4">
-        <p className="text-gray-700 mt-4 font-medium pl-4">
-          <div>
-            Federal Soft Systems Inc. is a leading Global IT Products and
-            Services
-          </div>
-          company that specializes in the Digital Transformation for diverse
-          <div>business verticals.</div>
+
+      {/* Right Div */}
+      <div className="w-full lg:w-1/2 p-4 bg-white rounded-lg shadow-sm text-center lg:text-left">
+        <p className="text-gray-700 mt-4 font-medium">
+          Nexota Technologies Private Limited specializes in application design and development, IT support, business consulting, and talent acquisition. 
+          As a dedicated startup, we focus on building trust and delivering quality through innovation and client-centric solutions.
         </p>
+
         <a href="/company">
-        <div className=" bg-white flex items-center justify-center">
-      <div className="relative group">
-        <button className="relative px-8 py-3 rounded-lg overflow-hidden">
-          {/* Rotating gradient border */}
-          <div className="absolute inset-0 bg-custom-gradient animate-spin-slow rounded-lg" />
-          
-          {/* White background */}
-          <div className="absolute inset-[2px] bg-white rounded-lg" />
-          
-          {/* Button content */}
-          <div className="relative z-10 flex items-center space-x-2">
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-custom-gradient">
-              Explore More
-            </span>
-            <ArrowRight className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+          <div className="flex justify-center lg:justify-start mt-6">
+            <div className="relative group p-2">
+              <button className="relative px-8 py-3 rounded-lg overflow-hidden">
+                {/* Rotating gradient border */}
+                <div className="absolute inset-0 bg-custom-gradient animate-spin-slow rounded-lg" />
+                
+                {/* White background */}
+                <div className="absolute inset-[2px] bg-white rounded-lg" />
+                
+                {/* Button content */}
+                <div className="relative z-10 flex items-center space-x-2">
+                  <span className="text-xl font-bold bg-clip-text text-transparent bg-custom-gradient">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </button>
+            </div>
           </div>
-        </button>
-      </div>
-    </div>
         </a>
       </div>
     </div>

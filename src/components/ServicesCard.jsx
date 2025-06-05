@@ -1,43 +1,35 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
-const ServiceCard = ({
-  title,
-  description,
-  backgroundImage,
-  onClick,
-  knowMore,
-}) => {
-  const navigate = useNavigate();
+const ServiceCard = ({ title, description, backgroundImage, knowMore }) => {
   return (
     <div
-      className="relative h-[500px]  rounded-xl overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
-      onClick={onClick}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative rounded-xl overflow-hidden shadow-lg bg-cover bg-center text-white h-[350px] group"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="absolute inset-0 hover:bg-gradient-to-br from-pink-400 via-black to-pink-400 "> 
-        <div className="absolute bottom-0 p-6 space-y-3">
-          <h3 className="text-2xl font-bold text-white">{title}</h3>
-          <p className="text-gray-200">{description}</p>
-          <button
-            onClick={() => navigate(knowMore)}
-            className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
-          >
-            Know More <ArrowRight size={20} />
-          </button>
-          {/* <button
-            onClick={() =>
-              (window.location.href = "/services/enterprise-solutions")
-            }
-            className="inline-block px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition"
-          >
-            Know More
-          </button> */}
+      <div className="bg-black/60 p-6 h-full flex flex-col justify-between">
+        <div>
+          <h3 className="text-2xl font-bold mb-2">{title}</h3>
+          <p className="text-sm">{description}</p>
+        </div>
+
+        {/* ✅ Buttons: always visible on mobile, hover-triggered only on desktop */}
+        <div
+          className="
+            mt-4 flex gap-2
+            sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100
+            transition-opacity duration-300
+          "
+        >
+          <a href={knowMore}>
+            <button className="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-gray-200 transition">
+              Learn More
+            </button>
+          </a>
+          <a href={knowMore}>
+            <button className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-lg hover:opacity-90 transition">
+              View
+            </button>
+          </a>
         </div>
       </div>
     </div>

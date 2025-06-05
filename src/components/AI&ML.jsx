@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Brain, Cpu, Database, Network, BarChart, Notebook as Robot, Search, Zap, CheckCircle2, Lightbulb, LineChart, Workflow } from "lucide-react";
+import Talenthiring from "../components/talenthiring/ServiceCard";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -88,6 +89,7 @@ function AiMachineLearning() {
           </div>
         </div>
       </div>
+
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-20">
@@ -197,6 +199,7 @@ function AiMachineLearning() {
           </div>
         </motion.div>
       </div>
+      
     </div>
   );
 }

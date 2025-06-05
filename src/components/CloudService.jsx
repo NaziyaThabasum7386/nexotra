@@ -11,8 +11,6 @@ import {
   Zap,
   CheckCircle2,
   CloudCog,
-  CloudRain,
-  CloudSun,
 } from "lucide-react";
 
 const fadeIn = {
@@ -24,16 +22,16 @@ const fadeIn = {
 function CloudSolutions() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
-      {/* Hero Section with Floating Clouds */}
+      {/* Hero Section */}
       <div className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-transparent z-10" />
         <img
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
-          alt="Cloud Technology"
+          alt="Consulting"
           className="absolute w-full h-full object-cover"
         />
 
-        {/* Animated Cloud Elements */}
+        {/* Animated Elements */}
         <div className="absolute inset-0 z-20">
           <motion.div
             animate={{
@@ -75,20 +73,19 @@ function CloudSolutions() {
               className="max-w-3xl"
             >
               <h1 className="text-6xl font-bold text-white mb-6 leading-tight">
-                Transform Your Business with Cloud Solutions
+                Empower Your Business with Strategic Consulting
               </h1>
               <p className="text-xl text-purple-100 mb-8">
-                Scalable, secure, and innovative cloud infrastructure designed
-                for the future of your enterprise.
+                Navigate complexity, drive transformation, and unlock
+                sustainable growth with our expert business consulting services.
               </p>
 
-              {/* Cloud Features Grid */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
-                  { icon: Scale, text: "Scalable Infrastructure" },
-                  { icon: Shield, text: "Enterprise Security" },
-                  { icon: Zap, text: "High Performance" },
-                  { icon: Globe, text: "Global Reach" },
+                  { icon: Scale, text: "Tailored Strategies" },
+                  { icon: Shield, text: "Risk Management" },
+                  { icon: Zap, text: "Operational Efficiency" },
+                  { icon: Globe, text: "Global Market Insight" },
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -118,23 +115,23 @@ function CloudSolutions() {
           {[
             {
               icon: Server,
-              title: "Cloud Infrastructure",
+              title: "Business Strategy",
               description:
-                "Build and scale your applications with our robust cloud infrastructure.",
+                "Develop data-driven strategies to gain a competitive edge and ensure long-term success.",
               color: "from-purple-500 to-purple-600",
             },
             {
               icon: Database,
-              title: "Cloud Storage",
+              title: "Operational Excellence",
               description:
-                "Secure and scalable storage solutions for your enterprise data.",
+                "Streamline operations and improve processes to boost productivity and profitability.",
               color: "from-indigo-500 to-indigo-600",
             },
             {
               icon: Layers,
-              title: "Cloud Platform",
+              title: "Market Expansion",
               description:
-                "Comprehensive platform services for modern application development.",
+                "Identify growth opportunities and expand into new markets with confidence.",
               color: "from-blue-500 to-blue-600",
             },
           ].map((service, index) => (
@@ -152,21 +149,21 @@ function CloudSolutions() {
           ))}
         </motion.div>
 
-        {/* Cloud Benefits */}
+        {/* Benefits Section */}
         <div className="mb-20">
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-4xl font-bold text-white text-center mb-12"
           >
-            Why Choose Our Cloud Solutions?
+            Why Choose Our Business Consulting Services?
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex-cols-1 flex items-center md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { metric: "99.99%", label: "Uptime Guarantee" },
-              { metric: "Global", label: "Data Centers" },
-              { metric: "24/7", label: "Expert Support" },
-              { metric: "Instant", label: "Scalability" },
+             
+              { metric: "Expert", label: "Advisory Team" },
+              { metric: "360°", label: "Business Solutions" },
+              { metric: "Agile", label: "Execution Model" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -184,7 +181,7 @@ function CloudSolutions() {
           </div>
         </div>
 
-        {/* Cloud Solutions Process */}
+        {/* Process Section */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -192,29 +189,29 @@ function CloudSolutions() {
         >
           <div className="absolute inset-0 bg-pattern opacity-5" />
           <h2 className="text-3xl font-bold text-white text-center mb-12 relative z-10">
-            Cloud Migration Process
+            Our Consulting Approach
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
             {[
               {
                 step: "1",
-                title: "Assessment",
-                description: "Evaluate current infrastructure",
+                title: "Discovery",
+                description: "Understand goals, challenges, and opportunities",
               },
               {
                 step: "2",
-                title: "Planning",
-                description: "Design cloud architecture",
+                title: "Analysis",
+                description: "Perform detailed market and business analysis",
               },
               {
                 step: "3",
-                title: "Migration",
-                description: "Seamless data transfer",
+                title: "Strategy",
+                description: "Craft tailored strategies and solutions",
               },
               {
                 step: "4",
-                title: "Optimization",
-                description: "Performance tuning",
+                title: "Execution",
+                description: "Implement, track, and optimize performance",
               },
             ].map((process, index) => (
               <motion.div
