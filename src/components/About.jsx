@@ -11,7 +11,7 @@ export default function About() {
   const stats = [
     {
       icon: <Users className="text-blue-400" size={24} />,
-      value: "50+",
+      value: "Cloud Native Force",
       label: "Happy Clients",
     },
     {
@@ -71,15 +71,13 @@ export default function About() {
           >
             <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
             <p className="text-gray-400 mb-6">
-              `At TechForge Solutions, we are committed to delivering
-              exceptional digital experiences through innovative technology
-              solutions. Our mission is to help businesses thrive in the digital
-              age by providing cutting-edge development services.`
+              At Nexotra, we are committed to delivering exceptional digital experiences through innovative technology solutions. Our mission is to help businesses thrive in the digital age by providing cutting-edge development services grounded in security, reliability, and scalability.
+
+              We believe in creating lasting partnerships with our clients, understanding their unique challenges, and delivering solutions that drive real business value.
+
             </p>
             <p className="text-gray-400">
-              We believe in creating lasting partnerships with our clients,
-              understanding their unique challenges, and delivering solutions
-              that drive real business value.
+              As part of our commitment to quality and resilience, we embed DevSecOps practices into every stage of our software delivery lifecycle.At Nexotra, innovation goes hand-in-hand with accountability — ensuring the digital solutions we deliver are not only high-performing, but also resilient and secure by design.
             </p>
           </motion.div>
 

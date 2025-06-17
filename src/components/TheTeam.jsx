@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const TheTeam = () => {
   return (
-    <div className="bg-gradient-to-tr from-pink-100 via-blue-100 to-blue-500 py-12 px-6">
+    <div className="bg-gradient-to-tr from-pink-100 via-blue-100 py-12 px-6">
       {/* Top Section: Text and Image */}
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
         <div className="space-y-8 p-8 lg:w-1/2">
@@ -55,10 +55,13 @@ const TheTeam = () => {
         </div>
       </div>
 
-      {/* Profile Cards Section */}
-      <div className="mt-12">
+      {/* Profile Cards Section
+       <div className="mt-12">
         <ProfileData />
       </div>
+      
+      */}
+     
     </div>
   );
 };

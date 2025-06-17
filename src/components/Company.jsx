@@ -17,24 +17,24 @@ const Company = () => {
 
         {/* Overlay Text */}
         <div className="absolute inset-0 flex flex-col items-start justify-center text-left px-8">
-          <motion.p
-            className="m-4 text-2xl md:text-5xl max-w-3xl font-bold text-white"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Driving Innovation with Integrity
-          </motion.p>
-          <motion.p
-            className="m-4 text-xl md:text-2xl font-semibold max-w-2xl text-white"
-            initial={{ opacity: 0, x: 1000 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Nexota Technologies Private Limited specializes in application development, IT services, business advisory, and recruitment solutions — dedicated to empowering your growth.
-          </motion.p>
+            <motion.p
+              className="m-4 text-2xl md:text-5xl max-w-3xl font-bold text-white"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              Driving Innovation with Integrity
+            </motion.p>
+            <motion.p
+              className="m-4 text-xl md:text-2xl font-semibold max-w-2xl text-white"
+              initial={{ opacity: 0, x: 1000 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Nexota Technologies Private Limited specializes in application development, IT services, business advisory, and recruitment solutions — dedicated to empowering your growth.
+            </motion.p>
         </div>
       </div>
 

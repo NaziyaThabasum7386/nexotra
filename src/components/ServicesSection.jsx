@@ -105,7 +105,7 @@ const CustomRightArrow = ({ onClick }) => (
 
 const ServicesSection = () => {
   return (
-    <div className="bg-white min-h-screen py-16">
+    <div className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-4xl font-bold text-black mb-4">Our Services</p>
